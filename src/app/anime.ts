@@ -11,4 +11,9 @@ export interface Anime {
       image_url: string;
     };
   };
+  trailer: {
+    url: string;
+  };
+  synopsis: string;
+  episodes: number;
 }

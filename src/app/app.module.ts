@@ -9,11 +9,31 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { AnimeService } from './anime.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { NavigationComponent } from './navigation/navigation.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
-  declarations: [AppComponent, CardComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [provideClientHydration(), AnimeService],
+  declarations: [AppComponent, CardComponent, NavigationComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatCardModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatDividerModule,
+    MatListModule,
+  ],
+  providers: [provideClientHydration(), AnimeService, provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
