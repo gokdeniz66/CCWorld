@@ -1,3 +1,27 @@
-<mat-toolbar>
-  <span>CCWorld</span>
+<mat-toolbar color="primary">
+  <img [src]="pathLogo" class="logo" />
+  <span class="title">{{ siteName }}</span>
+
+  <span class="spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="icon-button with account_circle"
+  >
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="icon-button with settings_brightness"
+  >
+    <mat-icon>settings_brightness</mat-icon>
+  </button>
 </mat-toolbar>
+
+<section class="menu-buttons">
+  <div class="button-row">
+    <button mat-raised-button color="primary">Characters</button>
+    <button mat-raised-button>Anime series</button>
+  </div>
+</section>

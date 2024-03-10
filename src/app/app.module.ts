@@ -18,6 +18,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, CardComponent, NavigationComponent],
@@ -32,6 +34,8 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatDividerModule,
     MatListModule,
+    FlexLayoutModule,
+    FormsModule,
   ],
   providers: [provideClientHydration(), AnimeService, provideAnimationsAsync()],
   bootstrap: [AppComponent],

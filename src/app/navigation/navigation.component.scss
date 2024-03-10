@@ -1,3 +1,35 @@
 mat-toolbar {
+  display: flex;
+  align-items: center;
   margin-bottom: 40px;
+  background-color: grey;
+}
+
+.logo {
+  max-height: 100%;
+  max-width: 100%;
+  margin-right: 10px;
+}
+
+.items-right {
+  margin-right: auto;
+}
+
+.title {
+  color: white;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu-buttons {
+  display: flex;
+  justify-content: start;
+  padding-left: 16px;
+}
+
+.button-row > button {
+  margin-right: 10px;
 }

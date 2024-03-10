@@ -1,10 +1,18 @@
-.anime-card {
-  width: 100%;
-  max-width: 250px;
-  margin-bottom: 120px;
-}
-
 .link {
   text-decoration: none;
   color: black;
 }
+
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 200px;
+}
+
+img {
+  width: auto;
+  height: 600px;
+}
+
