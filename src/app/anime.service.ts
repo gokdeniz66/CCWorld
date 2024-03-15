@@ -12,7 +12,7 @@ export class AnimeService {
   // Methode om gegevens op te halen van de API
   getData(): Observable<Anime[]> {
     return this.http
-      .get<AnimeResponse>('https://api.jikan.moe/v4/anime')
+      .get<AnimeResponse>('https://api.jikan.moe/v4/top/anime')
       .pipe(map((response: AnimeResponse) => response.data || []));
   }
 }

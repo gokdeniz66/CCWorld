@@ -1,27 +1,17 @@
 <div class="content">
-  <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div
-      fxFlex="20%"
-      fxFlex.xs="100%"
-      fxFlex.sm="33%"
-      *ngFor="let anime of data"
-    >
-      <mat-card class="mat-elevation-z4">
-        <img
-          mat-card-image
-          [src]="anime.images.jpg.image_url"
-          alt="Anime Image"
-        />
-        <mat-card-header>
-          <mat-card-title>{{ anime.title }}</mat-card-title>
-          <mat-card-subtitle
-            ><a [href]="anime.trailer.url" class="link" target="_blank"
-              >Trailer</a
-            >
-            <p>Episodes: {{ anime.episodes }}</p>
-          </mat-card-subtitle>
-        </mat-card-header>
-      </mat-card>
+  <section class="menu-buttons">
+    <div class="button-row">
+      <button mat-raised-button color="primary">Top anime</button>
+      <button mat-raised-button>Random anime</button>
+    </div>
+  </section>
+
+  <div class="row">
+    <div *ngFor="let anime of data" class="card">
+      <img [src]="anime.images.jpg.image_url" class="image" alt="Anime Image" />
+      <div class="text-block">
+        {{ anime.title }}
+      </div>
     </div>
   </div>
 </div>
