@@ -19,6 +19,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [AppComponent, CardComponent, NavigationComponent],
@@ -34,6 +36,8 @@ import { FormsModule } from '@angular/forms';
     MatDividerModule,
     MatListModule,
     FormsModule,
+    MatMenuModule,
+    MatRadioModule,
   ],
   providers: [provideClientHydration(), AnimeService, provideAnimationsAsync()],
   bootstrap: [AppComponent],

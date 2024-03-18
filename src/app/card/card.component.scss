@@ -2,6 +2,23 @@
   display: grid;
   justify-content: center;
 
+  .filters-layout {
+    display: flex;
+    justify-content: end;
+    .filter-button {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      span {
+        text-transform: uppercase;
+        font-weight: 500;
+        @media (max-width: 576px) {
+          display: none;
+        }
+      }
+    }
+  }
+
   .row {
     display: grid;
     gap: 5px;
@@ -33,26 +50,22 @@
       text-decoration: none;
       color: black;
     }
+
     @media (min-width: 576px) {
-      // Kleine apparaten zoals smartphones in landscape modus en tablets
       grid-template-columns: repeat(2, 1fr);
     }
 
     @media (min-width: 768px) {
-      // Laptops
       grid-template-columns: repeat(3, 1fr);
     }
 
     @media (min-width: 992px) {
-      // Desktops
       grid-template-columns: repeat(5, 1fr);
     }
   }
+}
 
-  button {
-    margin-right: 10px;
-  }
-  .menu-buttons {
-    margin-bottom: 15px;
-  }
+.radio-button {
+  display: flex;
+  margin: 5px;
 }
