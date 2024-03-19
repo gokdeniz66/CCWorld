@@ -1,9 +1,7 @@
 <div class="content">
-  <div *ngIf="menuSort">
+  <div *ngIf="menuType">
     <h1>
-      {{
-        sortShow === "Popularity" ? "Most Popular Anime" : "Newly Added Anime"
-      }}
+      {{ chosenType === "Anime" ? "Most Popular Anime" : "Most Popular Manga" }}
     </h1>
   </div>
   <div class="filters-layout">
@@ -16,28 +14,33 @@
     </div>
     <mat-menu #menuSort="matMenu">
       <mat-radio-group [(ngModel)]="sortShow">
-        @for (sort of sorting; track sort) {
-        <mat-radio-button class="radio-button" [value]="sort">{{
-          sort
-        }}</mat-radio-button>
-        }
+        <ng-container *ngFor="let sort of sorting">
+          <mat-radio-button class="radio-button" [value]="sort">{{
+            sort
+          }}</mat-radio-button>
+        </ng-container>
       </mat-radio-group>
     </mat-menu>
     <!-- END SORTING FILTER -->
     <!-- START SHOWTYPE FILTER -->
     <div class="filter-button">
-      <button mat-icon-button [matMenuTriggerFor]="menu">
+      <button mat-icon-button [matMenuTriggerFor]="menuType">
         <mat-icon>tune</mat-icon>
       </button>
       <span>Filter</span>
     </div>
-    <mat-menu #menu="matMenu">
-      <mat-radio-group [(ngModel)]="chosenType">
-        @for (typeShow of shows; track typeShow) {
-        <mat-radio-button class="radio-button" [value]="typeShow">{{
-          typeShow
-        }}</mat-radio-button>
-        }
+    <mat-menu #menuType="matMenu">
+      <mat-radio-group
+        [(ngModel)]="chosenType"
+        (ngModelChange)="onTypeChange($event)"
+      >
+        <mat-radio-button
+          class="radio-button"
+          *ngFor="let typeShow of shows"
+          [value]="typeShow"
+        >
+          {{ typeShow }}
+        </mat-radio-button>
       </mat-radio-group>
     </mat-menu>
     <!-- END SHOWTYPE FILTER -->

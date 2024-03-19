@@ -1,4 +1,4 @@
-export interface AnimeResponse {
+export interface ModelResponse {
   data: Anime[];
 }
 

@@ -9,21 +9,40 @@ import { Anime } from '../anime';
 })
 export class CardComponent implements OnInit {
   data: Anime[] = [];
-  chosenType: string = 'Series';
+  chosenType: string = 'Anime';
   sortShow: string = 'Popularity';
 
   constructor(private apiService: AnimeService) {}
 
   ngOnInit(): void {
-    this.fetchAnime();
+    this.fetchData();
   }
 
-  shows: string[] = ['Series', 'Movies'];
+  shows: string[] = ['Anime', 'Manga'];
   sorting: string[] = ['Popularity', 'Newest'];
 
+  onTypeChange(selectedType: string) {
+    this.chosenType = selectedType;
+    this.fetchData();
+  }
+
+  fetchData() {
+    if (this.chosenType === 'Anime') {
+      this.fetchAnime();
+    } else if (this.chosenType === 'Manga') {
+      this.fetchManga();
+    }
+  }
+
   fetchAnime() {
-    this.apiService.getData().subscribe((animeShow) => {
+    this.apiService.getTopAnime().subscribe((animeShow) => {
       this.data = animeShow;
+    });
+  }
+
+  fetchManga() {
+    this.apiService.getTopManga().subscribe((mangaShow) => {
+      this.data = mangaShow;
     });
   }
 }
