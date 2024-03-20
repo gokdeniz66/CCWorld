@@ -35,6 +35,8 @@ $CCWorld-theme: mat.define-light-theme(
 @include mat.all-component-themes($CCWorld-theme);
 
 /* You can add global styles to this file, and also import other style files */
+/* imports */
+@import "./app/utils/variables.scss"; // Importeer util SCSS-bestanden hier
 
 html,
 body {

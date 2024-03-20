@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { AnimeService } from '../anime.service';
-import { Anime } from '../anime';
+import { Component, OnInit } from '@angular/core';
+import { AnimeService } from '../../services/anime.service';
+import { Anime } from '../../interfaces/anime';
 
 @Component({
   selector: 'app-card',

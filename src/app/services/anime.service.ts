@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { ModelResponse, Anime } from './anime';
+import { ModelResponse, Anime } from '../interfaces/anime';
 
 @Injectable({
   providedIn: 'root',
