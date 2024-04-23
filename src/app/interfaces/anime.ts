@@ -17,3 +17,5 @@ export interface Anime {
   synopsis: string;
   episodes: number;
 }
+
+

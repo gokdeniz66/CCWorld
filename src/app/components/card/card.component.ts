@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimeService } from '../../services/anime.service';
 import { Anime } from '../../interfaces/anime';
+import { animeRecommended } from '../../interfaces/animeRecommended';
 
 @Component({
   selector: 'app-card',
@@ -9,6 +10,7 @@ import { Anime } from '../../interfaces/anime';
 })
 export class CardComponent implements OnInit {
   data: Anime[] = [];
+  dataRecommended: animeRecommended[] = [];
   chosenType: string = 'Anime';
   sortShow: string = 'Popularity';
 
@@ -19,22 +21,28 @@ export class CardComponent implements OnInit {
   }
 
   shows: string[] = ['Anime', 'Manga'];
-  sorting: string[] = ['Popularity', 'Newest'];
+  sorting: string[] = ['Popularity', 'Recommended'];
 
   onTypeChange(selectedType: string) {
-    this.chosenType = selectedType;
-    this.fetchData();
-  }
-
-  fetchData() {
-    if (this.chosenType === 'Anime') {
-      this.fetchAnime();
-    } else if (this.chosenType === 'Manga') {
-      this.fetchManga();
+    if (selectedType === 'shows') {
+        this.chosenType = this.sortShow;
+    } else if (selectedType === 'sorting') {
+        this.sortShow = this.chosenType;
     }
-  }
+    this.fetchData();
+}
 
-  fetchAnime() {
+fetchData() {
+  if (this.chosenType === 'Anime' && this.sortShow === 'Popularity') {
+    this.fetchAnimePopular();
+  } else if (this.chosenType === 'Anime' && this.sortShow === 'Recommended') {
+    this.fetchRecommendedAnime();
+  } else if (this.chosenType === 'Manga') {
+    this.fetchManga();
+  }
+}
+
+  fetchAnimePopular() {
     this.apiService.getTopAnime().subscribe((animeShow) => {
       this.data = animeShow;
     });
@@ -43,6 +51,12 @@ export class CardComponent implements OnInit {
   fetchManga() {
     this.apiService.getTopManga().subscribe((mangaShow) => {
       this.data = mangaShow;
+    });
+  }
+
+  fetchRecommendedAnime() {
+    this.apiService.GetRecommendedAnime().subscribe((animeShow) => {
+      this.dataRecommended = animeShow;
     });
   }
 }

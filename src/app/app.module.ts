@@ -21,9 +21,10 @@ import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
+import { NewsComponent } from './components/news/news.component';
 
 @NgModule({
-  declarations: [AppComponent, CardComponent, NavigationComponent],
+  declarations: [AppComponent, CardComponent, NavigationComponent, NewsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

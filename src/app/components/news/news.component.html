@@ -1,0 +1,28 @@
+<div class="container" *ngIf="randomAnime">
+  <img [src]="randomAnime.trailer.images.maximum_image_url" class="image" />
+  <div class="image-overlay"></div>
+  <div class="banner-text">
+    <h3>{{ randomAnime.title }}</h3>
+    <h2>
+      {{ randomAnime.synopsis }}
+    </h2>
+
+    <p>
+      Year:
+      {{ randomAnime.year !== null ? randomAnime.year : "Not released yet" }}
+    </p>
+    <p>
+      Season:
+      {{
+        randomAnime.season !== null ? randomAnime.season : "Not released yet"
+      }}
+    </p>
+    <a
+      mat-raised-button
+      color="accent"
+      href="{{ randomAnime.trailer.url }}"
+      target="_black"
+      >TRAILER</a
+    >
+  </div>
+</div>

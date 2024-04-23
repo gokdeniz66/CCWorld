@@ -1,6 +1,6 @@
 <div class="content">
   <div *ngIf="menuType">
-    <h1>
+    <h1 class="title">
       {{ chosenType === "Anime" ? "Most Popular Anime" : "Most Popular Manga" }}
     </h1>
   </div>
@@ -13,7 +13,10 @@
       <span>{{ sortShow }}</span>
     </div>
     <mat-menu #menuSort="matMenu">
-      <mat-radio-group [(ngModel)]="sortShow">
+      <mat-radio-group
+        [(ngModel)]="sortShow"
+        (ngModelChange)="onTypeChange($event)"
+      >
         <ng-container *ngFor="let sort of sorting">
           <mat-radio-button class="radio-button" [value]="sort">{{
             sort
@@ -50,6 +53,16 @@
       <img [src]="anime.images.jpg.image_url" class="image" alt="Anime Image" />
       <div class="text-block">
         {{ anime.title }}
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div *ngFor="let anime of dataRecommended" class="card">
+      <img [src]="anime.entry[0].images.jpg.large_image_url" class="image" alt="Anime Image" />
+      <div class="text-block">
+        {{ anime.entry[0].title }}
       </div>
     </div>
   </div>
