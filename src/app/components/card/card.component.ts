@@ -10,7 +10,6 @@ import { Anime } from '../../interfaces/anime';
 export class CardComponent implements OnInit {
   data: Anime[] = [];
   chosenType: string = 'Anime';
-  sortShow: string = 'Popularity';
   shows: string[] = ['Anime', 'Manga'];
 
   constructor(private apiService: AnimeService) {}
@@ -20,8 +19,8 @@ export class CardComponent implements OnInit {
   }
 
   onTypeChange(selectedType: string) {
-    if (selectedType === 'shows') {
-      this.chosenType = this.sortShow;
+    if (selectedType) {
+      this.chosenType;
     }
     this.fetchData();
   }
