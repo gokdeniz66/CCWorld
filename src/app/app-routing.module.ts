@@ -5,7 +5,8 @@ import { NewsComponent } from './components/news/news.component';
 
 const routes: Routes = [
   { path: '', component: CardComponent },
-  { path: 'seasons', component: NewsComponent },
+  { path: 'home', component: CardComponent },
+  { path: 'upcoming', component: NewsComponent },
 ];
 
 @NgModule({

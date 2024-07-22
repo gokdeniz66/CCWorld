@@ -2,14 +2,6 @@
   <img [src]="pathLogo" class="logo" />
   <span class="title">{{ siteName }}</span>
 
-  <span class="ml-5"> <a [routerLink]="upcomingSeasonPage">Upcoming</a></span>
-
-  <span class="spacer"></span>
-  <button
-    mat-icon-button
-    class="example-icon favorite-icon"
-    aria-label="icon-button with person"
-  >
-    <mat-icon>person</mat-icon>
-  </button>
+  <span class="ml-5"> <a [routerLink]="homePage">{{homePage}}</a></span>
+  <span class="ml-5"> <a [routerLink]="upcomingPage">{{upcomingPage}}</a></span>
 </mat-toolbar>

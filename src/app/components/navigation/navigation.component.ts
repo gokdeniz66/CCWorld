@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class NavigationComponent {
   siteName: string = 'CCWorld';
   pathLogo: string = '../../assets/logo.png';
-
-  public upcomingSeasonPage = 'seasons';
+  homePage: string = 'home';
+  upcomingPage: string = 'upcoming';
 }

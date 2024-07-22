@@ -6,7 +6,6 @@
     <h2>
       {{ randomAnime.synopsis }}
     </h2>
-
     <p>
       Year:
       {{ randomAnime.year !== null ? randomAnime.year : "Not released yet" }}
@@ -23,6 +22,9 @@
       href="{{ randomAnime.trailer.url }}"
       target="_black"
       >TRAILER</a
+    >
+    <a class="ml-4" mat-raised-button color="accent" onclick="location.reload()"
+      >REFRESH</a
     >
   </div>
 </div>

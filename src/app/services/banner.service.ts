@@ -9,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
 export class BannerService {
   constructor(private http: HttpClient) {}
 
-  // Methode om gegevens op te halen van de API
   getUpcomingAnime(): Observable<UpcomingAnime[]> {
     return this.http
       .get<UpcomingAnimeResponse>('https://api.jikan.moe/v4/seasons/upcoming')

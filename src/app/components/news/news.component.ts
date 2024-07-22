@@ -18,15 +18,14 @@ export class NewsComponent implements OnInit {
 
   fetchRandomUpcomingAnime() {
     this.bannerService.getUpcomingAnime().subscribe((animeShows) => {
-      // Filter de animeShows om alleen die met een afbeelding weer te geven
-      const showsWithImages = animeShows.filter(show => show.trailer.images.maximum_image_url !== null);
+      const showsWithImages = animeShows.filter(
+        (show) => show.trailer.images.maximum_image_url !== null
+      );
 
-      // Als er animeShows met afbeeldingen zijn, selecteer dan willekeurig een daarvan
       if (showsWithImages.length > 0) {
         const randomIndex = Math.floor(Math.random() * showsWithImages.length);
         this.randomAnime = showsWithImages[randomIndex];
       } else {
-        // Als er geen animeShows met afbeeldingen zijn, probeer dan opnieuw te laden
         this.fetchRandomUpcomingAnime();
       }
     });

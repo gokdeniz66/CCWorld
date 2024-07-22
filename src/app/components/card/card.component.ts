@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimeService } from '../../services/anime.service';
 import { Anime } from '../../interfaces/anime';
-import { animeRecommended } from '../../interfaces/animeRecommended';
 
 @Component({
   selector: 'app-card',
@@ -10,9 +9,9 @@ import { animeRecommended } from '../../interfaces/animeRecommended';
 })
 export class CardComponent implements OnInit {
   data: Anime[] = [];
-  dataRecommended: animeRecommended[] = [];
   chosenType: string = 'Anime';
   sortShow: string = 'Popularity';
+  shows: string[] = ['Anime', 'Manga'];
 
   constructor(private apiService: AnimeService) {}
 
@@ -20,29 +19,22 @@ export class CardComponent implements OnInit {
     this.fetchData();
   }
 
-  shows: string[] = ['Anime', 'Manga'];
-  sorting: string[] = ['Popularity', 'Recommended'];
-
   onTypeChange(selectedType: string) {
     if (selectedType === 'shows') {
-        this.chosenType = this.sortShow;
-    } else if (selectedType === 'sorting') {
-        this.sortShow = this.chosenType;
+      this.chosenType = this.sortShow;
     }
     this.fetchData();
-}
-
-fetchData() {
-  if (this.chosenType === 'Anime' && this.sortShow === 'Popularity') {
-    this.fetchAnimePopular();
-  } else if (this.chosenType === 'Anime' && this.sortShow === 'Recommended') {
-    this.fetchRecommendedAnime();
-  } else if (this.chosenType === 'Manga') {
-    this.fetchManga();
   }
-}
 
-  fetchAnimePopular() {
+  fetchData() {
+    if (this.chosenType === 'Anime') {
+      this.fetchAnime();
+    } else if (this.chosenType === 'Manga') {
+      this.fetchManga();
+    }
+  }
+
+  fetchAnime() {
     this.apiService.getTopAnime().subscribe((animeShow) => {
       this.data = animeShow;
     });
@@ -51,12 +43,6 @@ fetchData() {
   fetchManga() {
     this.apiService.getTopManga().subscribe((mangaShow) => {
       this.data = mangaShow;
-    });
-  }
-
-  fetchRecommendedAnime() {
-    this.apiService.GetRecommendedAnime().subscribe((animeShow) => {
-      this.dataRecommended = animeShow;
     });
   }
 }
