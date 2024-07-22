@@ -1,27 +1,14 @@
 # CCWorld
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![image](https://github.com/user-attachments/assets/3495fde0-4aa4-44d1-993a-4259e6bcdf0f)
+__Displaying current popular Anime__ 
+<br>
+<br>
+<br>
+![image](https://github.com/user-attachments/assets/d781a288-1069-4b5f-88fd-48f32709166d)
+__Displaying current popular Manga__
+<br>
+<br>
+<br>
+![image](https://github.com/user-attachments/assets/a46cf8c3-81b8-4b42-996b-7ab4d5080388)
+__Upcoming Anime__
